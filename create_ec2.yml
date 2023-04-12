@@ -11,6 +11,8 @@
 
      - name: Task # 1 - Create my security group
        local_action:
+         aws_access_key: "{{ aws_access_key }}"
+         aws_secret_key: "{{ aws_secret_key }}"       
          module: ec2_group
          name: "{{ security_group }}"
          description: Security Group for webserver Servers
