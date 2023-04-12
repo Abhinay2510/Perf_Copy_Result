@@ -34,15 +34,15 @@
        register: basic_firewall
      - name: Task # 2 Launch the new EC2 Instance
        local_action:  ec2
+                      aws_access_key= "{{ aws_access_key }}"
+                      aws_secret_key= "{{ aws_secret_key }}"        
                       group={{ security_group }}
                       instance_type={{ instance_type}}
                       image={{ image }}
                       wait=true
                       region={{ region }}
                       keypair={{ keypair }}
-                      count={{count}}
-                      aws_access_key= "{{ aws_access_key }}"
-                      aws_secret_key= "{{ aws_secret_key }}"         
+                      count={{count}}        
        register: ec2
      - name: Task # 3 Add Tagging to EC2 instance
        local_action: ec2_tag resource={{ item.id }} region={{ region }} state=present
