@@ -5,7 +5,7 @@
    gather_facts: False
    tags: provisioning
 
-   vars_files:
+   vars:
     access_key: "AKIAYIJQ6PVHQWLUQAX3"
     secret_key: "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"
     region: "ap-south-1"
