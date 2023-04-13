@@ -8,4 +8,4 @@ count: 1
 region: ap-south-1
 security_group: testec2-security-grp
 aws_access_key: "AKIAYIJQ6PVHQWLUQAX3"
-aws_secret_key: "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"
+aws_secret_key: "jBz"
