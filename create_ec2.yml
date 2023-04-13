@@ -43,8 +43,8 @@
        register: basic_firewall
      - name: Task # 2 Launch the new EC2 Instance
        local_action:  ec2
-                      aws_access_key= "{{ aws_access_key }}"
-                      aws_secret_key= "{{ aws_secret_key }}" 	   
+                      aws_access_key= "{{ access_key }}"
+                      aws_secret_key= "{{ secret_key }}" 	   
                       group={{ security_group }}
                       instance_type={{ instance_type}}
                       image={{ image }}
