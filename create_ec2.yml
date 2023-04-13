@@ -11,7 +11,7 @@
     region: "ap-south-1"
     image: "ami-0b02eacf129bfac4e"
     instance_type: "t2.micro"
-    key_name: "ansible_tower"
+    keypair: "ansible_tower"
     security_group: "testec2-security-grp"
     count: 1
    tasks:
