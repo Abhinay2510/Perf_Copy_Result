@@ -1,10 +1,11 @@
 ---
- -name:  provisioning EC2 instances using Ansible
-  hosts: all
-  connection: local
-  gather_facts: False
-  tags: provisioning
-  vars:
+ - name:  provisioning EC2 instances using Ansible
+   hosts: all
+   connection: local
+   gather_facts: False
+   tags: provisioning
+
+   vars_files:
     access_key: "AKIAYIJQ6PVHQWLUQAX3"
     secret_key: "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"
     region: "ap-south-1"
@@ -12,12 +13,12 @@
     instance_type: "t2.micro"
     key_name: "ansible_tower"
     security_group: "testec2-security-grp"
+   tasks:
 
-  tasks:
      - name: Task # 1 - Create my security group
        local_action:
          aws_access_key: "{{ access_key }}"
-         aws_secret_key: "{{ secret_key }}"       
+         aws_secret_key: "{{ secret_key }}"	     
          module: ec2_group
          name: "{{ security_group }}"
          description: Security Group for webserver Servers
@@ -42,14 +43,14 @@
      - name: Task # 2 Launch the new EC2 Instance
        local_action:  ec2
                       aws_access_key= "{{ aws_access_key }}"
-                      aws_secret_key= "{{ aws_secret_key }}"        
+                      aws_secret_key= "{{ aws_secret_key }}" 	   
                       group={{ security_group }}
                       instance_type={{ instance_type}}
                       image={{ image }}
                       wait=true
                       region={{ region }}
                       keypair={{ keypair }}
-                      count={{count}}        
+                      count={{count}}
        register: ec2
      - name: Task # 3 Add Tagging to EC2 instance
        local_action: ec2_tag resource={{ item.id }} region={{ region }} state=present
@@ -57,7 +58,3 @@
        args:
          tags:
            Name: "{{ Instance_Name }}"
-    - name: Add newly created EC2 instance to hosts group
-      add_host:
-        hostname: "{{ ec2_instance.instances[0].public_ip }}"
-        groups: ec2_instances
