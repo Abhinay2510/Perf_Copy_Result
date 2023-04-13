@@ -6,8 +6,8 @@
    tags: provisioning
 
    vars:
-    access_key: AKIAYIJQ6PVHYL7JHUQA
-    secret_key: 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
+    access_key: "AKIAYIJQ6PVHYL7JHUQA"
+    secret_key: "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"
     region: ap-south-1
     image: ami-0b02eacf129bfac4e
     instance_type: t2.micro
