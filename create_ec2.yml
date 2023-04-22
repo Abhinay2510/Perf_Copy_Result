@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
   - name: launching AWS instance using Ansible
-    amazon.aws.ec2_instance:
+    ec2:
        key_name: ansible_tower
        instance_type: t2.micro
        image: ami-0398ed544cd6d0ae7
