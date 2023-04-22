@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
   - name: launching AWS instance using Ansible
-    ec2:
+    amazon.aws.ec2_instance:
        key_name: ansible_tower
        instance_type: t2.micro
        image: ami-0398ed544cd6d0ae7
@@ -12,3 +12,5 @@
        count: 1
        vpc_subnet_id: default
        assign_public_ip: yes
+	     aws_access_key: AKIAYIJQ6PVHYL7JHUQA
+       aws_secret_key: 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
