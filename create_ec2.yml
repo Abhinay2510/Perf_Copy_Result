@@ -5,12 +5,12 @@
     ec2:
        key_name: ansible_tower
        instance_type: t2.micro
-       image: ami-0398ed544cd6d0ae7
+       image: ami-06c2ec1ceac22e8d6
        region: ap-south-1
        wait: yes
        group: Ansible
        count: 1
        vpc_subnet_id: default
        assign_public_ip: yes
-       aws_access_key: AKIAYIJQ6PVHYL7JHUQA
-       aws_secret_key: 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       
+       aws_access_key: AKIAQ5RX5OIEEB6BYW2H
+       aws_secret_key: 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       
