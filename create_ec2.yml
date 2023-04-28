@@ -12,5 +12,5 @@
        count: 1
        vpc_subnet_id: default
        assign_public_ip: yes
-	     aws_access_key: AKIAYIJQ6PVHYL7JHUQA
+       aws_access_key: AKIAYIJQ6PVHYL7JHUQA
        aws_secret_key: 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       
