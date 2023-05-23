@@ -7,4 +7,5 @@ group: webserver
 count: 1
 region: ap-south-1
 security_group: testec2-security-grp
-
+aws_access_key: AKIAYIJQ6PVHYL7JHUQA
+aws_secret_key: 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 
