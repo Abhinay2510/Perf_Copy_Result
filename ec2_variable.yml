@@ -1,7 +1,7 @@
 Instance_Name: testing
 keypair: ansible_tower
 instance_type: t2.micro
-image: ami-0b02eacf129bfac4e
+image: ami-0b7acb262cc9ea2ea
 wait: yes
 group: webserver
 count: 1
